@@ -31,8 +31,7 @@ local targetNames = {
     ["Matteo"] = true,
     ["Gattatino Neonino"] = true,
     ["Girafa Celestre"] = true,
-    ["Cocofanto Elefanto"] = true,
-	["Noobini Pizzanini"] = true
+    ["Cocofanto Elefanto"] = true
 }
 
 -- Find the nearest target animal
@@ -59,7 +58,7 @@ local function tryPrompt(animal)
         if obj:IsA("ProximityPrompt") and (root.Position - animal.HumanoidRootPart.Position).Magnitude <= interactDistance then
             pcall(function()
                 obj:InputHoldBegin()
-                wait(1) -- wait longer to ensure it finishes
+                wait(0.5)
                 obj:InputHoldEnd()
             end)
         end

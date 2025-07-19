@@ -5,6 +5,24 @@ local player = Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local root = character:WaitForChild("HumanoidRootPart")
 local humanoid = character:WaitForChild("Humanoid")
+local head = player.Character:WaitForChild("Head")
+local count = 1
+
+local billboard = Instance.new("BillboardGui")
+billboard.Name = "LoopStatus"
+billboard.Size = UDim2.new(0, 200, 0, 50)
+billboard.StudsOffset = Vector3.new(0, 2, 0)
+billboard.Adornee = head
+billboard.AlwaysOnTop = true
+billboard.Parent = head
+
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(1, 0, 1, 0)
+label.BackgroundTransparency = 1
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextScaled = true
+label.Text = "Loop OK"
+label.Parent = billboard
 
 local animalFolder = workspace:WaitForChild("MovingAnimals")
 
@@ -74,8 +92,8 @@ end
 -- Main loop
 task.spawn(function()
     while true do
-        print("still".. num)
-        num = num + 1
+        label.Text = "Loop #" .. count
+        count += 1
         local target = getNearestTarget()
         if target then
             local distance = (root.Position - target.HumanoidRootPart.Position).Magnitude

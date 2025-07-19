@@ -25,18 +25,22 @@ local Window = Rayfield:CreateWindow({
     KeySystem = false
 })
 
-local loopEnabled = false
+local Tab = Window:CreateTab("Farming", 4483362458) -- name and icon id
+local Section = Tab:CreateSection("Auto Farm")
 
-Rayfield:CreateToggle({
-    Name = "Auto Farm",
-    CurrentValue = false,
-    Flag = "FarmToggleFlag",
-    Callback = function(Value)
-        loopEnabled = Value
-        print("Loop is now:", loopEnabled and "ON" or "OFF")
-    end
+-- State variable
+local farming = false
+
+-- Create toggle
+Tab:CreateToggle({
+   Name = "Enable Auto-Farm",
+   CurrentValue = false,
+   Flag = "AutoFarm",
+   Callback = function(Value)
+      farming = Value
+      print("Auto-Farm is now", Value and "ON" or "OFF")
+   end,
 })
-
 
 local billboard = Instance.new("BillboardGui")
 billboard.Name = "LoopStatus"
@@ -116,7 +120,7 @@ end
 
 task.spawn(function()
     while true do
-        if loopEnabled then
+        if farming then
         label.Text = "Loop #" .. count
         count += 1
 

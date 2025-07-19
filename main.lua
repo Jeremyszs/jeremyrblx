@@ -7,6 +7,7 @@ local root = character:WaitForChild("HumanoidRootPart")
 local humanoid = character:WaitForChild("Humanoid")
 local head = player.Character:WaitForChild("Head")
 local count = 1
+local initialPosition = root.Position
 
 local billboard = Instance.new("BillboardGui")
 billboard.Name = "LoopStatus"
@@ -84,12 +85,13 @@ local function tryPrompt(animal)
     end
 end
 
--- Main loop
 task.spawn(function()
     while true do
         label.Text = "Loop #" .. count
         count += 1
+
         local target = getNearestTarget()
+
         if target then
             local distance = (root.Position - target.HumanoidRootPart.Position).Magnitude
 
@@ -98,6 +100,9 @@ task.spawn(function()
             end
 
             tryPrompt(target)
+        else
+            -- No target found, return to original position
+            humanoid:MoveTo(initialPosition)
         end
 
         task.wait(walkUpdateInterval)

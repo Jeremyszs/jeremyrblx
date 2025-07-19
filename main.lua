@@ -8,39 +8,6 @@ local humanoid = character:WaitForChild("Humanoid")
 local head = player.Character:WaitForChild("Head")
 local count = 1
 local initialPosition = root.Position
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-
-local Window = Rayfield:CreateWindow({
-    Name = "Animal Farm GUI",
-    LoadingTitle = "Loading...",
-    LoadingSubtitle = "by Jeremy",
-    ConfigurationSaving = {
-        Enabled = true,
-        FolderName = "MyScriptSettings",
-        FileName = "FarmToggle"
-    },
-    Discord = {
-        Enabled = false
-    },
-    KeySystem = false
-})
-
-local Tab = Window:CreateTab("Farming", 4483362458) -- name and icon id
-local Section = Tab:CreateSection("Auto Farm")
-
--- State variable
-local farming = false
-
--- Create toggle
-Tab:CreateToggle({
-   Name = "Enable Auto-Farm",
-   CurrentValue = false,
-   Flag = "AutoFarm",
-   Callback = function(Value)
-      farming = Value
-      print("Auto-Farm is now", Value and "ON" or "OFF")
-   end,
-})
 
 local billboard = Instance.new("BillboardGui")
 billboard.Name = "LoopStatus"
@@ -120,7 +87,6 @@ end
 
 task.spawn(function()
     while true do
-        if farming then
         label.Text = "Loop #" .. count
         count += 1
 
@@ -138,7 +104,6 @@ task.spawn(function()
             -- No target found, return to original position
             humanoid:MoveTo(initialPosition)
         end
-            end
 
         task.wait(walkUpdateInterval)
     end

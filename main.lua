@@ -50,11 +50,6 @@ local targetNames = {
     ["Gattatino Neonino"] = true,
     ["Girafa Celestre"] = true,
     ["Cocofanto Elefanto"] = true,
-    ["Frigo Camelo"] = true,
-    ["Orangutini Ananassini"] = true,
-    ["Rhino Toasterino"] = true,
-    ["Bombardiro Crocodilo"] = true,
-    ["Bombombini Gusini"] = true,
     ["Cavallo Virtuoso"] = true
 }
 

@@ -31,7 +31,13 @@ local targetNames = {
     ["Matteo"] = true,
     ["Gattatino Neonino"] = true,
     ["Girafa Celestre"] = true,
-    ["Cocofanto Elefanto"] = true
+    ["Cocofanto Elefanto"] = true,
+    ["Frigo Camelo"] = true,
+    ["Orangutini Ananassini"] = true,
+    ["Rhino Toasterino"] = true,
+    ["Bombardiro Crocodilo"] = true,
+    ["Bombombini Gusini"] = true,
+    ["Cavallo Virtuoso"] = true
 }
 
 -- Find the nearest target animal
@@ -69,9 +75,7 @@ end
 task.spawn(function()
     while true do
         -- Move a bit forward and backward to show it's still running
-        root.CFrame = root.CFrame * CFrame.new(2, 0, 0)
-        task.wait(1)
-        root.CFrame = root.CFrame * CFrame.new(-2, 0, 0)
+        humanoid:MoveTo(root.Position + Vector3.new(2, 0, 0))
         task.wait(1)
 
         local target = getNearestTarget()

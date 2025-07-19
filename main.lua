@@ -1,3 +1,5 @@
+--by jrmysz
+
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local num = 0

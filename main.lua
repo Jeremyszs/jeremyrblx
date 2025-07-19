@@ -68,6 +68,8 @@ end
 -- Main loop
 task.spawn(function()
     while true do
+        local msg = "Still alive at " .. os.date("%X")
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
         local target = getNearestTarget()
         if target then
             local distance = (root.Position - target.HumanoidRootPart.Position).Magnitude

@@ -1,6 +1,6 @@
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
-
+local num = 0
 local player = Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local root = character:WaitForChild("HumanoidRootPart")
@@ -74,10 +74,8 @@ end
 -- Main loop
 task.spawn(function()
     while true do
-        -- Move a bit forward and backward to show it's still running
-        humanoid:MoveTo(root.Position + Vector3.new(2, 0, 0))
-        task.wait(1)
-
+        print("still".. num)
+        num = num + 1
         local target = getNearestTarget()
         if target then
             local distance = (root.Position - target.HumanoidRootPart.Position).Magnitude

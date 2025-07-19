@@ -68,22 +68,23 @@ end
 -- Main loop
 task.spawn(function()
     while true do
-        root.CFrame = hrp.CFrame * CFrame.new(2, 0, 0)
+        -- Move a bit forward and backward to show it's still running
+        root.CFrame = root.CFrame * CFrame.new(2, 0, 0)
         task.wait(1)
-        root.CFrame = hrp.CFrame * CFrame.new(-2, 0, 0)
+        root.CFrame = root.CFrame * CFrame.new(-2, 0, 0)
         task.wait(1)
+
         local target = getNearestTarget()
         if target then
             local distance = (root.Position - target.HumanoidRootPart.Position).Magnitude
 
-            -- Move to animal
             if distance > 4 then
                 humanoid:MoveTo(target.HumanoidRootPart.Position)
             end
 
-            -- Try interacting
             tryPrompt(target)
         end
+
         task.wait(walkUpdateInterval)
     end
 end)

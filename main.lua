@@ -9,7 +9,7 @@ local targetNames = {
 	"Noobini", "La Vacca Saturno Saturnita", "Chimpanzini Spiderini", "Los Tralaleritos", "Las Tralaleritas",
 	"Graipus Medussi", "La Grande Combinasion", "Nuclearo Dinossauro", "Garama and Madundung", "Lucky Block",
 	"Ballerino Lololo", "Trenostruzzo Turbo 3000", "Statutino Libertino", "Odin Din Din Dun", "Espresso Signora",
-	"Tralalero Tralala", "Matteo", "Gattatino Neonino", "Girafa Celestre", "Cocofanto Elefanto"
+	"Tralalero Tralala", "Matteo", "Gattatino Neonino", "Girafa Celestre", "Cocofanto Elefanto", "Noobini Pizzanini"
 }
 
 local function isTargetName(name)

@@ -30,6 +30,30 @@ label.Parent = billboard
 
 local animalFolder = workspace:WaitForChild("MovingAnimals")
 
+local targetNames = {
+    ["La Vacca Saturno Saturnita"] = true,
+    ["Chimpanzini Spiderini"] = true,
+    ["Los Tralaleritos"] = true,
+    ["Las Tralaleritas"] = true,
+    ["Graipus Medussi"] = true,
+    ["La Grande Combinasion"] = true,
+    ["Nuclearo Dinossauro"] = true,
+    ["Garama and Madundung"] = true,
+    ["Ballerino Lololo"] = true,
+    ["Trenostruzzo Turbo 3000"] = true,
+    ["Statutino Libertino"] = true,
+    ["Odin Din Din Dun"] = true,
+    ["Espresso Signora"] = true,
+    ["Tralalero Tralala"] = true,
+    ["Matteo"] = true,
+    ["Gattatino Neonino"] = true,
+    ["Girafa Celestre"] = true,
+    ["Cocofanto Elefanto"] = true,
+    ["Cavallo Virtuoso"] = false,
+    ["Brainrot God Lucky Block"] = true,
+    ["Secret Lucky Block"] = true
+}
+
 local interactDistance = 10
 local walkUpdateInterval = 0.2
 

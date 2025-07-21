@@ -13,7 +13,7 @@ local initialPosition = root.Position
 
 local billboard = Instance.new("BillboardGui")
 billboard.Name = "LoopStatus"
-billboard.Size = UDim2.new(0, 200, 0, 50)
+billboard.Size = UDim2.new(0, 140, 0, 35)
 billboard.StudsOffset = Vector3.new(0, 2, 0)
 billboard.Adornee = head
 billboard.AlwaysOnTop = true
@@ -24,6 +24,7 @@ label.Size = UDim2.new(1, 0, 1, 0)
 label.BackgroundTransparency = 1
 label.TextColor3 = Color3.fromRGB(255, 255, 255)
 label.TextScaled = true
+label.Font = Enum.Font.SourceSansBold
 label.Text = "Loop OK"
 label.Parent = billboard
 
@@ -32,31 +33,6 @@ local animalFolder = workspace:WaitForChild("MovingAnimals")
 local interactDistance = 10
 local walkUpdateInterval = 0.2
 
--- List of valid animal names
-local targetNames = {
-    ["La Vacca Saturno Saturnita"] = true,
-    ["Chimpanzini Spiderini"] = true,
-    ["Los Tralaleritos"] = true,
-    ["Las Tralaleritas"] = true,
-    ["Graipus Medussi"] = true,
-    ["La Grande Combinasion"] = true,
-    ["Nuclearo Dinossauro"] = true,
-    ["Garama and Madundung"] = true,
-    ["Lucky Block"] = true,
-    ["Ballerino Lololo"] = true,
-    ["Trenostruzzo Turbo 3000"] = true,
-    ["Statutino Libertino"] = true,
-    ["Odin Din Din Dun"] = true,
-    ["Espresso Signora"] = true,
-    ["Tralalero Tralala"] = true,
-    ["Matteo"] = true,
-    ["Gattatino Neonino"] = true,
-    ["Girafa Celestre"] = true,
-    ["Cocofanto Elefanto"] = true,
-    ["Cavallo Virtuoso"] = true
-}
-
--- Find the nearest target animal
 local function getNearestTarget()
     local nearest = nil
     local shortestDist = math.huge
@@ -89,7 +65,7 @@ end
 
 task.spawn(function()
     while true do
-        label.Text = "Loop #" .. count
+        label.Text = "Still Looping, " .. count
         count += 1
 
         local target = getNearestTarget()

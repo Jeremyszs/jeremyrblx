@@ -53,8 +53,7 @@ local targetNames = {
     ["Cocofanto Elefanto"] = true,
     ["Cavallo Virtuoso"] = false,
     ["Brainrot God Lucky Block"] = true,
-    ["Secret Lucky Block"] = true,
-	["Noobini Pizzanini"] = true
+    ["Secret Lucky Block"] = true
 }
 
 local animalFolder = workspace:WaitForChild("MovingAnimals")

@@ -102,6 +102,14 @@ local targetNames = {
 	["Cavallo Virtuoso"] = false,
 	["Brainrot God Lucky Block"] = true,
 	["Secret Lucky Block"] = true
+	["Chicleteira Bicicleteira"] = true,
+	["Las Vaquitas Saturnitas"] = true,
+	["Nuclearo Dinossauro"] = true,
+	["La Grande Combinasion"] = true,
+	["Pot Hotspot"] = true,
+	["Piccione Macchina"] = true,
+	["Ballerino Lololo"] = true,
+	["Gattatino Nyanino"] = true
 }
 
 local animalFolder = workspace:WaitForChild("MovingAnimals")
